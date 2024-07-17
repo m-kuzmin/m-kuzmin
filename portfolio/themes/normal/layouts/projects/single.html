@@ -1,0 +1,23 @@
+{{ define "main" }}
+<article>
+  <p>
+    <b><a href="/projects">← All projects</a></b>
+  </p>
+  <h1>{{ .Title }}</h1>
+  <p>
+
+    {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+    {{ $dateHuman := .Date | time.Format ":date_long" }}
+    <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+    {{ range .GetTerms "skills" }}
+    {{ partial "skill-pill.html" . }}
+    {{ end }}
+    <br>
+    {{ with .Params.github }}
+    {{ partial "github.html" . }}
+    {{ end }}
+  </p>
+
+  {{ .Content }}
+</article>
+{{ end }}

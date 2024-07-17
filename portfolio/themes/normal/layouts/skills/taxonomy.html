@@ -1,0 +1,13 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+
+<p>Following is a list of skills I posess. Click on one to view the projects that use it.</p>
+
+<ul>
+  {{ range $name, $term := .Data.Terms }}
+  <li>
+    <a href="{{ .Page.Permalink }}">{{ .Page.LinkTitle }}</a>
+  </li>
+  {{ end }}
+</ul>
+{{ end }}

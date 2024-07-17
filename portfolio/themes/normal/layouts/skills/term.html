@@ -1,0 +1,24 @@
+{{ define "main" }}
+<p>
+  <b><a href="/skills">← All skills</a></b>
+</p>
+<h1>
+  {{- with .Params.parent_skill }}
+  {{- $skills := . }}
+  {{- range $skills }}
+  {{- $page := path.Join (slice "skills" .) | $.Site.GetPage }}
+  <a href="{{ $page.Permalink }}">{{ $page.Title }}/</a>
+  {{- end }}
+  {{- $.Page.Title }}
+  {{- else }}
+  {{- .Page.Title }}
+  {{- end }}
+</h1>
+<p>Projects that use this skill:</p>
+<ul>
+  {{ range .Pages }}
+  <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+  {{ end }}
+</ul>
+{{ .Content }}
+{{ end }}

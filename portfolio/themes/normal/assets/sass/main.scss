@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Fira+Sans&display=swap');
+
+:root {
+    font-family: 'Fira Sans', sans-serif;
+
+    @for $i from 0 through 9 {
+        $bg-hue: 254;
+
+        --bg#{$i}-hsl: #{$bg-hue},
+        20%,
+        #{5% + $i * 3%};
+
+        --fg#{$i}-hsl: #{(360-$bg-hue) % 360},
+        5%,
+        #{70% + $i * 2%};
+
+        --bg-highlight#{$i}-hsl: #{$bg-hue},
+        20%,
+        #{15% + $i * 3%};
+
+        --fg-highlight#{$i}-hsl: #{(360-$bg-hue) % 360},
+        5%,
+        #{70% + $i * 2%};
+    }
+
+    color: hsl(var(--fg0-hsl));
+    background-color: hsl(var(--bg0-hsl));
+
+    --gradient-light: 118,
+    226,
+    244;
+    --gradient-middle: 97,
+    93,
+    236;
+    --gradient-dark: 48,
+    23,
+    129;
+}
+
+body {
+    line-height: 1.5;
+    max-width: 775px;
+    margin: auto;
+}
+
+nav {
+    $layer: 8;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: hsl(var(--bg#{$layer}-hsl));
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: hsl(var(--fg#{$layer}-hsl));
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        color: hsl(var(--fg-highlight#{$layer}-hsl));
+        background-color: hsl(var(--bg-highlight#{$layer}-hsl));
+    }
+}
+
+h1 {
+    margin-bottom: 0.5em;
+    border-image-slice: 1;
+    border-width: 0px;
+    border-bottom: 4px;
+    border-style: solid;
+    border-image-source:
+        linear-gradient(to right,
+            rgb(var(--gradient-dark)),
+            rgb(var(--gradient-middle)),
+            rgb(var(--gradient-light)) 70%,
+            rgb(var(--gradient-light)) 75%,
+            rgba(var(--gradient-light), 0.0) 90%);
+}
+
+
+main,
+footer {
+    margin: 0 1rem;
+}
+
+.card {
+    border-radius: 10px;
+    background-color: hsl(var(--bg1-hsl));
+    margin: 30px 0;
+
+    h1:first-child,
+    h2:first-child {
+        margin-top: 0;
+    }
+}
+
+.card-body {
+    border-radius: 0 0 10px 10px;
+    background-color: hsl(var(--bg1-hsl));
+    margin-bottom: 30px;
+
+}
+
+.card,
+.card-body {
+    padding: 10px;
+    margin-top: 0;
+    color: hls(var(--fg1-hsl));
+}
+
+.card-header {
+    $starting-alpha: 1;
+    $gradient-len: 50%;
+
+    margin-top: 30px;
+    margin-bottom: 0;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+
+    $darken: #000a;
+    background: linear-gradient(#{$darken}, #{$darken}),
+    radial-gradient(circle at 25% -30%, rgba(var(--gradient-middle), $starting-alpha), rgba(var(--gradient-middle), 0) $gradient-len),
+    radial-gradient(circle at 80% 150%, rgba(var(--gradient-light), $starting-alpha), rgba(var(--gradient-light), 0) $gradient-len),
+    rgb(var(--gradient-dark));
+
+    color: hsl(var(--fg9-hsl));
+
+    h1:first-child,
+    h2:first-child {
+        margin: 0;
+    }
+}
+
+a {
+    color: rgb(var(--gradient-light));
+}
+
+a:hover {
+    color: rgb(var(--gradient-middle));
+}
+
+a:visited {
+    color: inherit;
+}
+
+a:visited:hover {
+    color: rgb(var(--gradient-light));
+}
+
+a.no-decor,
+a.no-decor:hover,
+a.no-decor:visited,
+a.no-decor:visited:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.pill {
+    background-color: hsl(var(--bg7-hsl));
+    color: hsl(var(--fg7-hsl));
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 999999px;
+}
+
+.pill:hover {
+    background-color: hsl(var(--bg-highlight7-hsl));
+    color: hsl(var(--fg-highlight7-hsl));
+}
