@@ -36,6 +36,6 @@ to run `docker-compose down` to completely clear the container state. I didn't k
 migration issues when I tried to change the schema without resetting the test database.
 
 Overall I brushed up on concepts I had experience with, but hadn't used for some time. While this project is very 
-similar to [another one I did](../simple-rest-api), I did make some improvements. Such as replacing the unnecessary checks to ensure 
+similar to [another one I did]({{< relref "simple-rest-api.md" >}}), I did make some improvements. Such as replacing the unnecessary checks to ensure 
 auto-generated code was not modifed, the generated code is now gitignored and generated at build time in docker. If
 anything, this test task will be useful to me as work experience.

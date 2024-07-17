@@ -14,7 +14,7 @@ Renders a menu for the given menu ID.
 <nav>
   <ul>
     <li>
-      <a href="/" class="no-decor">{{site.Title}}</a>
+      <a href="{{ site.BaseURL }}" class="no-decor">{{ site.Title }}</a>
     </li>
     {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
   </ul>

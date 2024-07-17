@@ -1,7 +1,3 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
-
 [[menus.main]]
 name = 'Projects'
 pageRef = '/projects'
@@ -9,10 +5,11 @@ weight = 20
 
 [[menus.main]]
 name = 'Skills'
-pageRef = '/Skills'
+pageRef = '/skills'
 weight = 30
 
 [module]
 [module.hugoVersion]
 extended = false
 min = "0.116.0"
+

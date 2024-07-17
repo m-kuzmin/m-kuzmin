@@ -1,7 +1,8 @@
-baseURL: https://m-kuzmin.github.io
+baseURL: &baseRef 'https://m-kuzmin.github.io/m-kuzmin'
 languageCode: en-us
-title: M. Kuzmin
+title: &title M. Kuzmin
 theme: normal
 
 taxonomies:
   skill: skills
+
