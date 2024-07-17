@@ -7,8 +7,6 @@ skills:
   - golang
   - graphql
   - docker
-
-draft: true
 ---
 
 # Overview

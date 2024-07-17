@@ -4,8 +4,6 @@ date: 2023-05-17
 github: m-kuzmin/golang-telegram-bot
 description: "Echo telegram bot, as simple as it gets. A predecessor to the daily reporter bot."
 skills: [ golang ]
-
-draft: true
 ---
 
 # Overview

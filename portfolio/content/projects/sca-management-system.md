@@ -7,8 +7,6 @@ skills:
   - golang
   - postgres
   - docker
-
-draft: true
 ---
 
 # Overview
