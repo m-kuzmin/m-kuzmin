@@ -11,3 +11,5 @@ a [page with my skills]({{< relref "/skills" >}}) that also lists what projects 
 
 The format of this website allows for more verbosity than the 1-2 pages the resume allows for. I tried to provide some
 more details regarding my experience on the project pages.
+
+***🚧 This site is not finished yet 🚧***
