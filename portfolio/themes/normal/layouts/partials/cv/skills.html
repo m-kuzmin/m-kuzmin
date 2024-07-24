@@ -1,0 +1,14 @@
+<h2>Skills</h2>
+<p>
+    {{- range .Site.Data.qualifications.skills }}
+<h3>{{ .category }}</h3>
+
+<ul>
+    {{- range .items }}
+    <li>
+        {{ transform.Markdownify . }}
+    </li>
+    {{- end}}
+</ul>
+{{- end}}
+</p>

@@ -1,0 +1,6 @@
+<h2>Languages</h2>
+{{- range .Site.Data.qualifications.languages }}
+<p>
+    {{ transform.Markdownify . }}
+</p>
+{{- end}}

@@ -1,0 +1,40 @@
+{{ define "main" }}
+<div class="dont-print">
+    <p style="color: white; text-align: center;">
+        This page is print-friendly. Press <kbd>Ctrl+P</kbd> and save as PDF!
+    </p>
+</div>
+
+<div class="a4">
+    <div class="with-sidebar">
+        <div class="sidebar">
+            <section>
+                {{ partial "cv/about.html" . }}
+            </section>
+
+            <section>
+                {{ partial "cv/language.html" . }}
+            </section>
+
+            <section>
+                {{ partial "cv/skills.html" . }}
+            </section>
+        </div>
+
+        <div class="main">
+            <section>
+                <h2 class="allign-to-name">Summary</h2>
+                {{ .Content }}
+            </section>
+
+            <section>
+                {{ partial "cv/education.html" . }}
+            </section>
+
+            <section>
+                {{ partial "cv/jobs.html" . }}
+            </section>
+        </div>
+    </div>
+</div>
+{{ end }}

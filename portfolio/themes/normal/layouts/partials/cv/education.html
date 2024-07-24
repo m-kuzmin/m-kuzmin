@@ -1,0 +1,4 @@
+<h2>Education</h2>
+{{- range site.Data.qualifications.education }}
+{{ transform.Markdownify . }}
+{{- end }}

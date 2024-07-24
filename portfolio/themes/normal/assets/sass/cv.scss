@@ -1,0 +1,134 @@
+@use 'partials/base';
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Fira+Sans&display=swap');
+
+:root {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+@media screen {
+    :root {
+        background-color: base.bg(0);
+    }
+
+    .a4 {
+        width: 210mm;
+        height: 297mm;
+        margin: 1em;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        background-color: white;
+        position: relative;
+    }
+
+    body {
+        overflow: scroll;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+}
+
+@media print {
+    @page {
+        size: A4;
+    }
+
+    .dont-print {
+        display: none !important;
+    }
+}
+
+$outer-padding: 30px;
+
+.with-sidebar {
+    display: grid;
+    padding: $outer-padding;
+    gap: $outer-padding;
+    grid-template-areas: "side main";
+    grid-template-columns: 1fr 2fr;
+}
+
+.main {
+    grid-area: main;
+}
+
+.sidebar {
+    grid-area: side;
+}
+
+h1#name {
+    color: base.$brand-dark;
+
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h2#position {
+    color: base.$brand-middle;
+
+    margin-top: 0;
+    font-size: x-large;
+    font-weight: normal;
+}
+
+.allign-to-name {
+    margin-top: 0.25em;
+}
+
+.main {
+    section h2 {
+        margin-bottom: 0.5em;
+        border-image-slice: 1;
+        border-width: 0px;
+        border-bottom: 4px;
+        border-style: solid;
+        border-image-source:
+            linear-gradient(to right,
+                base.$brand-dark,
+                base.$brand-middle,
+                base.$brand-light 65%,
+                base.$brand-light 70%,
+                transparent 90%);
+    }
+
+    h3.position {
+        margin-top: 1.5em;
+        margin-bottom: 0.2em;
+    }
+}
+
+
+.sidebar {
+    h1#name {
+        font-size: xx-large;
+    }
+
+    h2#position {
+        border: none;
+    }
+
+    section h2 {
+        margin-bottom: 0.5em;
+        border-image-slice: 1;
+        border-width: 0px;
+        border-bottom: 4px;
+        border-style: solid;
+        border-image-source:
+            linear-gradient(to right,
+                base.$brand-dark,
+                base.$brand-middle,
+                base.$brand-light 80%);
+    }
+}
+
+ul {
+    padding-inline-start: 20px;
+}
+
+img.text-inline-logo {
+    height: 1em;
+    display: inline-flex;
+    top: .125em;
+    position: relative;
+}

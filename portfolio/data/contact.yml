@@ -1,0 +1,18 @@
+- icon: github.svg
+  url: https://github.com/m-kuzmin
+  display: m-kuzmin
+
+- icon: linkedin.svg
+  url: https://www.linkedin.com/in/mkuzminr/
+  display: mkuzminr
+
+- icon: gmail.svg
+  url: mailto:mkuzminr+hr@gmail.com
+  display: mkuzminr@gmail.com
+
+- icon: globe-website.svg
+  url: https://m-kuzmin.github.io/m-kuzmin
+  display: Portfolio
+
+- icon: flag-ua.svg
+  display: Kiev, Ukraine

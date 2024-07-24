@@ -1,0 +1,8 @@
+<h2>Professional Experience</h2>
+{{- range where site.RegularPages.Reverse "Type" "jobs" }}
+<h3 class="position">{{ .Params.position}}</h3>
+<a href="{{ .Params.website }}">{{.Params.company}}</a>, {{ .Params.timeline }}
+<p>
+    {{ .Content }}
+</p>
+{{- end}}

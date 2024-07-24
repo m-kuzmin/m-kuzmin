@@ -1,3 +1,6 @@
+[taxonomies]
+skill = "skills"
+
 [[menus.main]]
 name = 'Projects'
 pageRef = '/projects'
@@ -12,4 +15,3 @@ weight = 30
 [module.hugoVersion]
 extended = false
 min = "0.116.0"
-
