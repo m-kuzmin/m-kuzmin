@@ -132,3 +132,33 @@ img.text-inline-logo {
     top: .125em;
     position: relative;
 }
+
+kbd {
+    $key-color: base.$brand-dark;
+    color: white;
+    padding: 2px 6px;
+    margin: 2px;
+    font-family: 'Fira Sans', sans;
+
+    background-image: linear-gradient(to right,
+            $key-color,
+            scale-color($key-color, $lightness: +20%),
+            $key-color);
+
+    border-top: 1px solid scale-color($key-color,
+            $saturation: -5%,
+            $lightness: +40%);
+
+    border-right: 3px solid scale-color($key-color,
+            $saturation: -5%,
+            $lightness: +10%);
+    border-left: 3px solid scale-color($key-color,
+            $saturation: -5%,
+            $lightness: +20%);
+    border-bottom: 5px solid scale-color($key-color,
+            $saturation: -5%,
+            $lightness: +5%, );
+    border-radius: 1px 1px 3px 3px;
+
+    outline: $key-color solid 1px;
+}
