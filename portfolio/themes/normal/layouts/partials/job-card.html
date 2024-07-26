@@ -1,0 +1,15 @@
+<div class="card-header row space-between">
+    <div>
+        <h2><a href="{{ .Permalink }}" class="no-decor">{{ .Params.position }}</a>
+        </h2>
+        {{- with .Params.website }}
+        <a href="{{ . }}">{{ $.Params.company }}</a>
+        {{- else }}
+        {{ .Params.company }}
+        {{- end }}
+    </div>
+    <span>{{ .Params.timeline }}</span>
+</div>
+<div class="card-body">
+    {{ .Content }}
+</div>

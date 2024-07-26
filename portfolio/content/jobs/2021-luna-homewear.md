@@ -1,6 +1,6 @@
 ---
 company: Luna Homewear
-website: https://lunahomewear.com/
+website: https://lunahomewear.com
 timeline: November 2021 - January 2022
 position: Frontend Developer
 ---

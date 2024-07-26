@@ -1,6 +1,6 @@
 ---
 company: Red Rocket
-website: https://redrocket.software/
+website: https://redrocket.software
 timeline: May 2023 - August 2023
 position: Backend Golang Developer
 ---

@@ -1,0 +1,20 @@
+{{- define "main" }}
+<article>
+  <p>
+    <b><a href='{{ relURL "jobs" }}'>← All jobs</a></b>
+  </p>
+  <h1>{{ .Params.position }} at {{ .Params.company }}</h1>
+  <p>
+    {{- with .Params.website }}
+    <a href="{{ . }}">{{ . }}</a>
+    {{- end}}
+    <br>
+    {{ .Params.timeline }}
+    {{ range .GetTerms "skills" }}
+    {{ partial "skill-pill.html" . }}
+    {{ end }}
+  </p>
+  {{ .Content }}
+
+</article>
+{{- end }}

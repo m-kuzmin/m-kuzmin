@@ -1,0 +1,7 @@
+{{- define "main" }}
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+{{- range .Pages.Reverse }}
+{{- partial "job-card.html" . }}
+{{- end }}
+{{- end }}
