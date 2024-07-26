@@ -5,3 +5,11 @@ theme: normal
 
 params:
   author: Maxim Kuzmin
+
+taxonomies:
+  skill: skills
+
+module:
+  hugoVersion:
+    extended: false
+    min: '0.116.0'
