@@ -1,16 +1,11 @@
-$brand-dark: rgb(48, 23, 129);
-$brand-middle: rgb(97, 93, 236);
-$brand-light: rgb(118, 226, 244);
-
-$bg-hue: hue($brand-dark);
+@use 'variables';
 
 @function bg($layer) {
     @if 0>$layer or $layer>9 {
         @error "background layer should be 0..9, got #{$layer}.";
     }
 
-
-    @return hsl($bg-hue, 20%, 5% + $layer * 3%);
+    @return hsl(variables.$bg-hue, 20%, 5% + $layer * 3%);
 }
 
 @function fg($layer) {
@@ -18,7 +13,7 @@ $bg-hue: hue($brand-dark);
         @error "foreground layer should be 0..9, got #{$layer}.";
     }
 
-    @return hsl((360-$bg-hue)%360, 5%, 70% + $layer * 2%);
+    @return hsl((360 - variables.$bg-hue)%360, 5%, 70% + $layer * 2%);
 }
 
 
@@ -27,7 +22,7 @@ $bg-hue: hue($brand-dark);
         @error "background highlight layer should be 0..9, got #{$layer}.";
     }
 
-    @return hsl($bg-hue, 20%, 15% + $layer * 3%);
+    @return hsl(variables.$bg-hue, 20%, 15% + $layer * 3%);
 }
 
 @function fg-highlight($layer) {

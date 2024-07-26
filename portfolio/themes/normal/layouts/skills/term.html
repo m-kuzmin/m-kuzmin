@@ -1,6 +1,6 @@
-{{ define "main" }}
+{{- define "main" }}
 <p>
-<b><a href="{{ relURL "skills" }}">← All skills</a></b>
+  <b><a href='{{ relURL "skills" }}'>← All skills</a></b>
 </p>
 <h1>
   {{- with .Params.parent_skill }}
@@ -12,13 +12,10 @@
   {{- $.Page.Title }}
   {{- else }}
   {{- .Page.Title }}
-  {{- end }}
+  {{- end }} Projects
 </h1>
-<p>Projects that use this skill:</p>
-<ul>
-  {{ range .Pages }}
-  <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-  {{ end }}
-</ul>
+{{- range .Pages }}
+{{- partial "project-card.html" . }}
+{{- end }}
 {{ .Content }}
-{{ end }}
+{{- end }}

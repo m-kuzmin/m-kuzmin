@@ -1,4 +1,4 @@
-@use 'partials/base';
+@use 'abstracts';
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Fira+Sans&display=swap');
 
@@ -8,7 +8,7 @@
 
 @media screen {
     :root {
-        background-color: base.bg(0);
+        background-color: abstracts.bg(0);
     }
 
     .a4 {
@@ -58,14 +58,14 @@ $outer-padding: 30px;
 }
 
 h1#name {
-    color: base.$brand-dark;
+    color: abstracts.$brand-dark;
 
     margin-top: 0;
     margin-bottom: 0;
 }
 
 h2#position {
-    color: base.$brand-middle;
+    color: abstracts.$brand-middle;
 
     margin-top: 0;
     font-size: x-large;
@@ -85,10 +85,10 @@ h2#position {
         border-style: solid;
         border-image-source:
             linear-gradient(to right,
-                base.$brand-dark,
-                base.$brand-middle,
-                base.$brand-light 65%,
-                base.$brand-light 70%,
+                abstracts.$brand-dark,
+                abstracts.$brand-middle,
+                abstracts.$brand-light 65%,
+                abstracts.$brand-light 70%,
                 transparent 90%);
     }
 
@@ -116,9 +116,9 @@ h2#position {
         border-style: solid;
         border-image-source:
             linear-gradient(to right,
-                base.$brand-dark,
-                base.$brand-middle,
-                base.$brand-light 80%);
+                abstracts.$brand-dark,
+                abstracts.$brand-middle,
+                abstracts.$brand-light 80%);
     }
 }
 
@@ -134,7 +134,7 @@ img.text-inline-logo {
 }
 
 kbd {
-    $key-color: base.$brand-dark;
+    $key-color: abstracts.$brand-dark;
     color: white;
     padding: 2px 6px;
     margin: 2px;
