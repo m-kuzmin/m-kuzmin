@@ -1,7 +1,7 @@
 education:
   - |
-    Bachelors in **Information Systems and Technologies**
-    **[Ukrainian Engineering Pedagogics Academy](http://uipa.edu.ua/)**, 2019 -  2024
+    Bachelors in **Information&nbsp;Systems&nbsp;and&nbsp;Technologies**
+    **[Ukrainian&nbsp;Engineering&nbsp;Pedagogics&nbsp;Academy](http://uipa.edu.ua/)**, 2019&nbsp;-&nbsp;2024
 
 languages:
   - "**English (B2)** - Strong written and spoken communication skills"
@@ -9,16 +9,17 @@ languages:
 
 skills:
   - category: Programming Languages
-    items: [ Go,  Rust, Python, C++, Basic HTML/CSS/JS ]
+    items: [ Go, Python, Basic HTML/CSS/JS, Rust, C++ ]
 
   - category: Deployment & Tools
     items:   
+      - Kafka
       - Docker
       - Linux & NixOS (Declaratively configured Linux distro)
+      - CI/CD (GitHub Actions)
       - Git (CLI) & GitHub
-      - GitHub Actions (CI)
-      - Scripts (bash, python), Makefiles
+      - Scripts (Bash, Python, Make)
 
   - category: API/DB
-    items: [ GraphQL, SQL (PostgreSQL), REST, Swagger UI ]
+    items: [ GraphQL, SQL (PostgreSQL), REST, gRPC/protobuf, Swagger UI ]
 
