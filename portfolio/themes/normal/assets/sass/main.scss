@@ -1,7 +1,10 @@
-@use 'layout';
 @use 'abstracts';
+@use 'layout';
+@use 'theme';
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Fira+Sans&display=swap');
+
+@layer reset, base, header;
 
 :root {
     font-family: 'Fira Sans', sans-serif;
@@ -46,140 +49,111 @@ body {
     margin: auto;
 }
 
-nav {
-    $layer: 8;
+@layer header {
+    nav {
+        $layer: 8;
 
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: hsl(var(--bg#{$layer}-hsl));
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: abstracts.bg($layer);
+            color: abstracts.fg($layer);
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            color: abstracts.fg-highlight($layer);
+            background-color: abstracts.bg-highlight($layer);
+        }
+    }
+}
+
+@layer base {
+    h1 {
+        margin-bottom: 0.5em;
+        border-image-slice: 1;
+        border-width: 0px;
+        border-bottom: 4px;
+        border-style: solid;
+        border-image-source:
+            linear-gradient(to right,
+                rgb(var(--gradient-dark)),
+                rgb(var(--gradient-middle)),
+                rgb(var(--gradient-light)) 70%,
+                rgb(var(--gradient-light)) 75%,
+                rgba(var(--gradient-light), 0.0) 90%);
     }
 
-    li {
-        float: left;
+    h1,
+    h2 {
+        img.text-inline-logo {
+            height: 0.7em;
+            top: 0em;
+        }
     }
 
-    li a {
-        display: block;
-        color: hsl(var(--fg#{$layer}-hsl));
-        text-align: center;
-        padding: 14px 16px;
+    main,
+    footer {
+        margin: 0 1rem;
+    }
+
+
+    a {
+        color: rgb(var(--gradient-light));
+    }
+
+    a:hover {
+        color: rgb(var(--gradient-middle));
+    }
+
+    a:visited {
+        color: inherit;
+    }
+
+    a:visited:hover {
+        color: rgb(var(--gradient-light));
+    }
+
+    a.no-decor,
+    a.no-decor:hover,
+    a.no-decor:visited,
+    a.no-decor:visited:hover {
         text-decoration: none;
+        color: inherit;
     }
 
-    li a:hover {
-        color: hsl(var(--fg-highlight#{$layer}-hsl));
-        background-color: hsl(var(--bg-highlight#{$layer}-hsl));
+    img.text-inline-logo {
+        height: 1em;
+        top: .125em;
+        display: inline-flex;
+        position: relative;
     }
-}
 
-h1 {
-    margin-bottom: 0.5em;
-    border-image-slice: 1;
-    border-width: 0px;
-    border-bottom: 4px;
-    border-style: solid;
-    border-image-source:
-        linear-gradient(to right,
-            rgb(var(--gradient-dark)),
-            rgb(var(--gradient-middle)),
-            rgb(var(--gradient-light)) 70%,
-            rgb(var(--gradient-light)) 75%,
-            rgba(var(--gradient-light), 0.0) 90%);
-}
-
-
-main,
-footer {
-    margin: 0 1rem;
-}
-
-.card {
-    border-radius: 10px;
-    background-color: hsl(var(--bg1-hsl));
-    margin: 30px 0;
-
-    h1:first-child,
-    h2:first-child {
-        margin-top: 0;
+    .pill {
+        background-color: hsl(var(--bg7-hsl));
+        color: hsl(var(--fg7-hsl));
+        border: none;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 999999px;
     }
-}
 
-.card-body {
-    border-radius: 0 0 10px 10px;
-    background-color: hsl(var(--bg1-hsl));
-    margin-bottom: 30px;
-
-}
-
-.card,
-.card-body {
-    padding: 10px;
-    margin-top: 0;
-    color: hls(var(--fg1-hsl));
-}
-
-.card-header {
-    $starting-alpha: 1;
-    $gradient-len: 50%;
-
-    margin-top: 30px;
-    margin-bottom: 0;
-    padding: 10px;
-    border-radius: 10px 10px 0 0;
-
-    $darken: #000a;
-    background: linear-gradient(#{$darken}, #{$darken}),
-    radial-gradient(circle at 25% -30%, rgba(var(--gradient-middle), $starting-alpha), rgba(var(--gradient-middle), 0) $gradient-len),
-    radial-gradient(circle at 80% 150%, rgba(var(--gradient-light), $starting-alpha), rgba(var(--gradient-light), 0) $gradient-len),
-    rgb(var(--gradient-dark));
-
-    color: hsl(var(--fg9-hsl));
-
-    h1:first-child,
-    h2:first-child {
-        margin: 0;
+    .pill:hover {
+        background-color: hsl(var(--bg-highlight7-hsl));
+        color: hsl(var(--fg-highlight7-hsl));
     }
-}
-
-a {
-    color: rgb(var(--gradient-light));
-}
-
-a:hover {
-    color: rgb(var(--gradient-middle));
-}
-
-a:visited {
-    color: inherit;
-}
-
-a:visited:hover {
-    color: rgb(var(--gradient-light));
-}
-
-a.no-decor,
-a.no-decor:hover,
-a.no-decor:visited,
-a.no-decor:visited:hover {
-    text-decoration: none;
-    color: inherit;
-}
-
-.pill {
-    background-color: hsl(var(--bg7-hsl));
-    color: hsl(var(--fg7-hsl));
-    border: none;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 999999px;
-}
-
-.pill:hover {
-    background-color: hsl(var(--bg-highlight7-hsl));
-    color: hsl(var(--fg-highlight7-hsl));
 }

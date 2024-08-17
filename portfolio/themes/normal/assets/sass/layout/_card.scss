@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+@layer base {
+    .card {
+        $r: 10px;
+
+        @include layer(1);
+
+        border-radius: $r;
+        padding: 0;
+
+        >.edge-top {
+            border-radius: $r $r 0 0;
+        }
+    }
+}

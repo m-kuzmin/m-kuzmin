@@ -14,8 +14,11 @@
   {{- .Page.Title }}
   {{- end }} Projects
 </h1>
-{{- range .Pages }}
-{{- partial "project-card.html" . }}
-{{- end }}
+
+<div class="column gap-medium">
+    {{- range .Pages }}
+    {{- partial "inline/project-card.html" . }}
+    {{- end }}
+</div>
 {{ .Content }}
 {{- end }}

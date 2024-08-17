@@ -24,12 +24,7 @@ Renders a menu for the given menu ID.
 {{- define "partials/inline/menu/walk.html" }}
 {{- $page := .page }}
 {{- range .menuEntries }}
-{{- $attrs := dict "href" .URL }}
-{{- if $page.IsMenuCurrent .Menu . }}
-{{- $attrs = merge $attrs (dict "class" "active no-decor" "aria-current" "page") }}
-{{- else if $page.HasMenuCurrent .Menu .}}
-{{- $attrs = merge $attrs (dict "class" "no-decor ancestor" "aria-current" "true") }}
-{{- end }}
+{{- $attrs := (dict "href" .URL "class" "no-decor")}}
 {{- $name := .Name }}
 {{- with .Identifier }}
 {{- with T . }}

@@ -1,0 +1,57 @@
+@layer base {
+    .p-none {
+        padding: 0px;
+    }
+
+    .p-small {
+        padding: 5px;
+    }
+
+    .p-medium {
+        padding: 10px;
+    }
+
+    .p-large {
+        padding: 15px;
+    }
+
+    .m-none {
+        margin: 0px;
+    }
+
+    .m-small {
+        margin: 5px;
+    }
+
+    .m-medium {
+        margin: 10px;
+    }
+
+    .m-large {
+        margin: 15px;
+    }
+
+    .column.gap-small>*+* {
+        margin-top: 5px;
+    }
+
+    .column.gap-medium>*+* {
+        margin-top: 10px;
+    }
+
+    .column.gap-large>*+* {
+        margin-top: 15px;
+    }
+
+    .row.gap-small>*+* {
+        margin-left: 5px;
+    }
+
+    .row.gap-medium>*+* {
+        margin-left: 10px;
+    }
+
+    .row.gap-large>*+* {
+        margin-left: 15px;
+    }
+}

@@ -1,0 +1,6 @@
+@use 'functions' as *;
+
+@mixin layer($layer) {
+    color: fg($layer);
+    background-color: bg($layer);
+}

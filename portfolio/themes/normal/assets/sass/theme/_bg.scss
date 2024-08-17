@@ -1,0 +1,17 @@
+@use '../abstracts/' as *;
+@use 'sass:color';
+
+@layer base {
+    .textured-bg {
+        $darken: 60%;
+
+        @include layer(9);
+
+        background:
+            radial-gradient(circle at 25% 10%, color.scale($brand-middle, $lightness: -$darken, $saturation: -$darken*0.7),
+                transparent 60%),
+            radial-gradient(circle at 80% 120%, color.scale($brand-light, $lightness: -$darken, $saturation: -$darken*0.8),
+                transparent 50%),
+            color.scale($brand-dark, $lightness: -$darken);
+    }
+}

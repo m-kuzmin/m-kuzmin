@@ -1,15 +1,17 @@
-<div class="card-header row space-between">
-    <div>
-        <h2><a href="{{ .Permalink }}" class="no-decor">{{ .Params.position }}</a>
-        </h2>
-        {{- with .Params.website }}
-        <a href="{{ . }}">{{ $.Params.company }}</a>
-        {{- else }}
-        {{ .Params.company }}
-        {{- end }}
+<div class="card">
+    <div class="edge-top p-medium textured-bg row space-between">
+        <div class="column">
+            <h2 class="m-none"><a href="{{ .Permalink }}" class="no-decor">{{ .Params.position }}</a>
+            </h2>
+            {{- with .Params.website }}
+            <a href="{{ . }}">{{ $.Params.company }}</a>
+            {{- else }}
+            {{ .Params.company }}
+            {{- end }}
+        </div>
+        <span>{{ .Params.timeline }}</span>
     </div>
-    <span>{{ .Params.timeline }}</span>
-</div>
-<div class="card-body">
-    {{ .Content }}
+    <div class="p-medium">
+        {{ .Content }}
+    </div>
 </div>

@@ -26,5 +26,9 @@
 }
 
 @function fg-highlight($layer) {
-    @return fg($layer)
+    @if 0>$layer or $layer>9 {
+        @error "foreground layer should be 0..9, got #{$layer}.";
+    }
+
+    @return hsl((360 - variables.$bg-hue)%360, 15%, 70% + $layer * 2%);
 }
