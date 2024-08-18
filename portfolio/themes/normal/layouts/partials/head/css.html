@@ -1,6 +1,6 @@
 {{- $opts := dict "transpiler" "dartsass" "targetPath" "css/style.css" }}
-{{- with resources.Get "sass/main.scss" | toCSS $opts | minify | fingerprint }}
-{{- if eq hugo.Environment "development" }}
+{{- with resources.Get "sass/main.scss" | toCSS $opts }}
+{{- if hugo.IsDevelopment }}
 <link rel="stylesheet" href="{{ .RelPermalink }}">
 {{- else }}
 {{- with . | minify | fingerprint }}
