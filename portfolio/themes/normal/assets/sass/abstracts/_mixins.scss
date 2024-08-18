@@ -4,3 +4,8 @@
     color: fg($layer);
     background-color: bg($layer);
 }
+
+@mixin layer-highlight($layer) {
+    color: fg-highlight($layer);
+    background-color: bg-highlight($layer);
+}

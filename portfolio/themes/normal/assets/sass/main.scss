@@ -4,7 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Fira+Sans&display=swap');
 
-@layer reset, base, header;
+@layer reset, base;
 
 :root {
     font-family: 'Fira Sans', sans-serif;
@@ -43,13 +43,11 @@
     129;
 }
 
-body {
-    line-height: 1.5;
-    max-width: 775px;
-    margin: auto;
-}
+@layer base {
+    body {
+        scroll-behavior: smooth;
+    }
 
-@layer header {
     nav {
         $layer: 8;
 
@@ -78,44 +76,33 @@ body {
             background-color: abstracts.bg-highlight($layer);
         }
     }
-}
 
-@layer base {
-    h1 {
-        margin-bottom: 0.5em;
+    h1,
+    h2 {
         border-image-slice: 1;
         border-width: 0px;
         border-bottom: 4px;
         border-style: solid;
         border-image-source:
             linear-gradient(to right,
-                rgb(var(--gradient-dark)),
-                rgb(var(--gradient-middle)),
-                rgb(var(--gradient-light)) 70%,
-                rgb(var(--gradient-light)) 75%,
-                rgba(var(--gradient-light), 0.0) 90%);
-    }
+                abstracts.$brand-dark,
+                abstracts.$brand-middle,
+                abstracts.$brand-light 70%,
+                abstracts.$brand-light 75%,
+                transparent 90%);
 
-    h1,
-    h2 {
         img.text-inline-logo {
             height: 0.7em;
             top: 0em;
         }
     }
 
-    main,
-    footer {
-        margin: 0 1rem;
-    }
-
-
     a {
-        color: rgb(var(--gradient-light));
+        color: abstracts.$brand-light;
     }
 
     a:hover {
-        color: rgb(var(--gradient-middle));
+        color: abstracts.$brand-middle;
     }
 
     a:visited {
@@ -123,7 +110,7 @@ body {
     }
 
     a:visited:hover {
-        color: rgb(var(--gradient-light));
+        color: abstracts.$brand-light;
     }
 
     a.no-decor,
@@ -139,21 +126,5 @@ body {
         top: .125em;
         display: inline-flex;
         position: relative;
-    }
-
-    .pill {
-        background-color: hsl(var(--bg7-hsl));
-        color: hsl(var(--fg7-hsl));
-        border: none;
-        padding: 5px 10px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        border-radius: 999999px;
-    }
-
-    .pill:hover {
-        background-color: hsl(var(--bg-highlight7-hsl));
-        color: hsl(var(--fg-highlight7-hsl));
     }
 }

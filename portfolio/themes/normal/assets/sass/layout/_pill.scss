@@ -1,0 +1,18 @@
+@use '../abstracts';
+
+@layer base {
+    .pill {
+        @include abstracts.layer(7);
+
+        border: none;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 999999px;
+    }
+
+    .pill:hover {
+        @include abstracts.layer-highlight(7);
+    }
+}

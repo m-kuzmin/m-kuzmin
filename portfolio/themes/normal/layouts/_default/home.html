@@ -1,3 +1,101 @@
 {{ define "main" }}
-{{ .Content }}
+<article>
+    {{ .Content }}
+
+    <article id="projects">
+        <h2>Projects</h2>
+        <section class="carousel gap-large">
+            <ul>
+                {{- range where site.RegularPages "Type" "projects" }}
+                {{- partial "inline/project-carousel-card.html" . }}
+                {{- end }}
+            </ul>
+
+            <aside class="row gap-large">
+                {{- range where site.RegularPages "Type" "projects" }}
+                <a href="#project_{{ path.Base .Path }}"></a>
+                {{- end }}
+            </aside>
+        </section>
+    </article>
+
+    <article id="jobs">
+        <h2>Jobs</h2>
+        <section class="carousel gap-large">
+            <ul>
+                {{- range where site.RegularPages.Reverse "Type" "jobs" }}
+                {{- partial "inline/job-carousel-card.html" . }}
+                {{- end }}
+            </ul>
+
+            <aside class="row gap-large">
+                {{- range where site.RegularPages.Reverse "Type" "jobs" }}
+                <a href="#job_{{ path.Base .Path }}"></a>
+                {{- end }}
+            </aside>
+        </section>
+    </article>
+
+</article>
 {{ end }}
+
+{{ define "partials/inline/project-carousel-card.html" }}
+{{ $page := .}}
+
+<li class="card" id="project_{{ path.Base .Path }}" style="min-width: min(30em, 80vw);">
+    <div class="edge-top p-medium textured-bg row space-between">
+        <h2 class="m-none">
+            <a href="{{ .Permalink }}" class="no-decor">
+                {{ .LinkTitle }}
+
+                {{- with resources.Get "icons/open-link.svg" }}
+                <img src='{{ .RelPermalink }}' class="text-inline-logo">
+                {{- else }}
+                {{- errorf "No icon for %s" . }}
+                {{- end }}
+            </a>
+        </h2>
+        {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+        {{ $dateHuman := .Date | time.Format ":date_long" }}
+        <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+    </div>
+    <div class="column gap-medium m-medium">
+
+        <p class="m-none">
+            {{ partial "github.html" .Params.github }}
+        </p>
+
+        <ul class="row p-none m-none gap-medium" style="margin-bottom: 0;">
+            {{ range .GetTerms "skills" }}
+            {{ partial "skill-pill.html" . }}
+            {{ end }}
+        </ul>
+
+        <p class="m-none">
+            {{ .Description }}
+        </p>
+    </div>
+</li>
+{{ end}}
+
+{{ define "partials/inline/job-carousel-card.html" }}
+{{ $page := .}}
+
+<li class="card" id="job_{{ path.Base .Path }}" style="min-width: min(40em, 80vw);">
+    <div class="edge-top p-medium textured-bg row space-between">
+        <div class="column">
+            <h2 class="m-none"><a href="{{ .Permalink }}" class="no-decor">{{ .Params.position }}</a>
+            </h2>
+            {{- with .Params.website }}
+            <a href="{{ . }}">{{ $.Params.company }}</a>
+            {{- else }}
+            {{ .Params.company }}
+            {{- end }}
+        </div>
+        <span>{{ .Params.timeline }}</span>
+    </div>
+    <div class="p-medium">
+        {{ .Content }}
+    </div>
+</li>
+{{ end}}

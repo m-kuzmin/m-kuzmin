@@ -1,0 +1,70 @@
+@use '../abstracts';
+@use 'padding-margin';
+
+@layer base {
+    .carousel {
+        $fade-len: 20px;
+        $item-box-shadow-w: 10px;
+        margin: 0 (- padding-margin.$body-padding);
+
+        mask: linear-gradient(to left,
+                transparent 0,
+                white $fade-len) right / 50% repeat-y,
+            linear-gradient(to right,
+                transparent 0,
+                white $fade-len) left / 50% repeat-y;
+
+        >ul,
+        >ol {
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            padding: $item-box-shadow-w $fade-len+$item-box-shadow-w ;
+            margin: 0;
+
+            >li {
+                scroll-snap-align: start;
+                scroll-snap-stop: always;
+                scroll-margin-left: $item-box-shadow-w + $fade-len;
+            }
+
+            li.card:target {
+                box-shadow: 0 0 10px abstracts.$brand-middle;
+                transition: box-shadow 0.3s ease-in-out;
+            }
+        }
+
+        >aside {
+            justify-content: center;
+            margin: 10px 0 20px;
+
+            >a {
+                height: 2em;
+                width: 3em;
+                background: linear-gradient(to bottom,
+                        abstracts.$brand-dark 30%,
+                        abstracts.bg(1) 30%,
+                    );
+                border-radius: 3px;
+            }
+        }
+
+    }
+
+    .carousel.gap-large {
+
+        >ul>li,
+        >ol>li {
+            margin-right: 15px;
+        }
+
+        >ul>li:last-child,
+        >ol>li:last-child {
+            margin-right: 0;
+        }
+    }
+}

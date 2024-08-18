@@ -5,7 +5,7 @@
   {{ partial "head.html" . }}
 </head>
 
-<body>
+<body {{- if .IsHome }} class="w-large" {{- end }}>
   <header>
     {{ partial "header.html" . }}
   </header>

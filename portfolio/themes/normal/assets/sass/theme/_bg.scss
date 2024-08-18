@@ -13,5 +13,10 @@
             radial-gradient(circle at 80% 120%, color.scale($brand-light, $lightness: -$darken, $saturation: -$darken*0.8),
                 transparent 50%),
             color.scale($brand-dark, $lightness: -$darken);
+
+        h1,
+        h2 {
+            border-width: 0px;
+        }
     }
 }
