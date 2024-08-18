@@ -9,7 +9,7 @@ skills:
   - docker
 ---
 
-# Overview
+## Overview
 
 The SCA (test task force) needed a backend server for managing their cat agents. Cats would go on missions and spy on 
 1-3 targets. They would update their notes and eventually mark the target as complete.
@@ -19,7 +19,7 @@ The SCA (test task force) needed a backend server for managing their cat agents.
 
 There were some additional constraints set by the SCA, but those aren't important enough to be listed here.
 
-# Tech stack
+## Tech stack
 
 - **Golang** for the backend server
 - **PostgreSQL** database to store cat, mission and target information
@@ -28,7 +28,7 @@ There were some additional constraints set by the SCA, but those aren't importan
 - **go-migrate** as the database migration tool (Go server would migrate the DB on startup)
 - **Docker** (and docker-compose) for obvious reasons. Easy DB setup, no build tools required on the runner machine etc.
 
-# Valuable experience
+## Valuable experience
 
 While implementing the backend service, I practiced using a variety of tools to interface with SQL databases. I did face
 some issues, however. For example, just stopping a docker container is not enough to delete the database file. You have

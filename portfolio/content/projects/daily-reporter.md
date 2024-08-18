@@ -9,7 +9,7 @@ skills:
   - docker
 ---
 
-# Overview
+## Overview
 
 This was an automation for a mundane task at my internship. I was asked to come up with a telegram bot idea and since I
 didn't enjoy collecting all the things I did during the day, I made this project!
@@ -25,14 +25,14 @@ less anxiety inducing than hoping that you have everything in the right columns 
 
 The message template is in the repo [readme](https://github.com/m-kuzmin/daily-reporter?tab=readme-ov-file#daily-reporter)
 
-# Tech stack
+## Tech stack
 
 - **Golang** to control the bot
 - A custom framework that manages the conversation states for each user and interacting with **Telegram API**.
 - **Docker**
 - **GraphQL** for querying **GitHub API**
 
-# Valuable experience
+## Valuable experience
 
 Don't reinvent the wheel... As a begginer I did that a lot. And it was good because I learned how things worked. But
 this project could really have benefited, time-wise, from not having to implement and debug interactions with the

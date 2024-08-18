@@ -10,7 +10,7 @@ skills:
   - github-actions
 ---
 
-# Overview
+## Overview
 
 A simple project, yet powerful learning experience. I learned how to setup a dockerized PostgreSQL database, connect it
 to the Go application using docker-compose, make queries securely (SQL injections) using sqlc and create API endpoints
@@ -22,7 +22,7 @@ choices I made back then.
 The application itself is not very interesting, it just has some endpoints to create users, search them etc, the details
 are in the repo readme, the main value for me was the use of all these tools.
 
-# Tech stack
+## Tech stack
 
 - **Golang**
   - **Gin** for the REST API
@@ -32,7 +32,7 @@ are in the repo readme, the main value for me was the use of all these tools.
 - **Docker** to connect **PostgreSQL** and the Go backend server
 - **GitHub Actions** for code quality control and SQL query checks.
 
-# Valuable experience
+## Valuable experience
 
 I learned how to use the tools and libraries in the tech stack, did some research and compared them to alternatives. Set
 up CI to run checks on the code. Overall I think I learned more in this project, than the rest of my previous Go 

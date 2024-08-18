@@ -8,14 +8,14 @@ skills: []
 draft: true
 ---
 
-# Overview
+## Overview
 
 *What are the project goals*
 
-# Tech stack
+## Tech stack
 
 *What tech was used and why it was chosen (why its better than alternative)*
 
-# Valuable experience
+## Valuable experience
 
 *What I learned while creating the project, what was hard, what was reused*
