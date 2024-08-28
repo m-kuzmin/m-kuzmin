@@ -1,11 +1,9 @@
 ---
 company: Luna Homewear
 website: https://lunahomewear.com
-timeline: November 2021 - January 2022
+timeline: 2022 (6m)
 position: Frontend Developer
 ---
-
-Luna Homewear is an online clothes store. My responsibilities included:
 
 - Provide technical support to the store owner
 - Maintain and develop the UI of the store
