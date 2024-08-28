@@ -16,7 +16,9 @@
 
     devShells.${system}.default = pkgs.mkShell {
       buildInputs = with pkgs; [
-        hugo dart-sass];
+        hugo
+        dart-sass
+      ];
     };
   };
 }
