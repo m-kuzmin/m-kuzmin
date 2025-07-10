@@ -13,3 +13,15 @@ module:
   hugoVersion:
     extended: false
     min: '0.116.0'
+
+menus:
+  main:
+    - name: 'Projects'
+      pageRef: '/projects'
+      weight: 20
+    - name: 'Skills'
+      pageRef: '/skills'
+      weight: 30
+    - name: 'Jobs'
+      pageRef: '/jobs'
+      weight: 40

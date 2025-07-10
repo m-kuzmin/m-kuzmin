@@ -1,5 +1,7 @@
+@use 'sass:color';
+
 $brand-dark: #301781;
 $brand-middle: #615dec;
 $brand-light: #76e2f4;
 
-$bg-hue: hue($brand-dark);
+$bg-hue: color.channel($brand-dark, "hue", $space: hsl);
