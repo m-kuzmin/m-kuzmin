@@ -4,12 +4,16 @@ education:
     **[Ukrainian&nbsp;Engineering&nbsp;Pedagogics&nbsp;Academy](http://uipa.edu.ua/)**, 2019&nbsp;-&nbsp;2024
 
 languages:
-  - "**English (B2)** - Strong written and spoken communication skills"
+  - Fluent written and spoken **English** communication skills
   - Native speaker of **Ukrainian**
 
 skills:
   - category: Programming Languages
-    items: [ Go, Python, Basic HTML/CSS/JS, Rust, C++ ]
+    items:
+      - Javascript (Node.JS), HTML, CSS
+      - Rust
+      - Python
+      - C++
 
   - category: Deployment & Tools
     items:   
